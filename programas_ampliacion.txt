@@ -1,0 +1,71 @@
+Ejercicio 1: serie de Fibonnaci
+
+import java.util.Scanner;
+public class Main {  
+  public static void main(String args[]) { 
+    Scanner teclado = new Scanner (System.in);
+	int numero, i = 2;
+
+	System.out.print ("Ingresar número de términos: ");
+	numero = teclado.nextInt();
+
+	System.out.print ("1 ");
+
+	  if (numero >= 2) {
+		  long  anterior = 0;
+		  long actual = 1;
+
+		  do {
+			  long copia_actual = actual;
+			  actual = actual + anterior;
+			  anterior = copia_actual;
+			  System.out.print(actual);
+			  i ++;
+		  } while (i <= numero);
+	  }
+		
+  } 
+}
+
+
+Ejercicio 2: Sacar la potencia de un número introducido por teclado.
+	     Necesidad: Pedir por teclado la base y el exponente.
+
+
+import java.util.Scanner;
+public class Main {  
+  public static void main(String args[]) { 
+    Scanner teclado = new Scanner (System.in);
+	int base = 0, exponente = 0, i;
+
+	System.out.print ("Introduce la base: ");
+	base = teclado.nextInt();
+
+	System.out.print ("Introduce el exponente: ");
+	exponente = teclado.nextInt();
+
+	int resultado = 1;
+	  
+	for (i = 1; i <= exponente; i ++) {
+		resultado = resultado * base;
+	}
+
+	System.out.println ("La potencia del número es: " + resultado);
+  } 
+}
+
+
+
+Ejercicio 3: Introducir un número para construir filas:
+
+Resultado:
+
+        1
+     1  2  1
+  1  2  3  2  1
+Hasta el número introducido.
+
+
+
+
+

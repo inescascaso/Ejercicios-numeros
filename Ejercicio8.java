@@ -1,35 +1,22 @@
-//Leer una frase filtrándola a toda mayúsculas, hacer un cifrado por sustitución (cifrado CESAR)
-//de modo que cada carácter se transforme en 3 códigos ASCII.
+//Escribir un número por teclado, calcular y escribir el factorial de dicho número.
 
-//Autor: Inés Cristóbal Ascaso
-//Fecha: 16/11/2021
-
+//Autor: Inés Cristóbal
+//Fecha: 05/11/21
 
 import java.util.Scanner;
-public class Main
-{
-	public static void main(String[] args) {
-	    Scanner teclado = new Scanner (System.in);
-	   // int codigo = codigo % 26; //Entre 26 porque es el total de letras en el alfabeto.
-	    int i;
-	    
-	    System.out.print ("Introduce una frase: ");
-	    String frase = teclado.nextLine();
-	   // System.out.println (frase.toUpperCase());
-	    
-	    for (i = 0; i < frase.length (); i++) {
-	        
-	        String codigo = "";
-	        
-	        codigo = codigo + ((char)(frase.charAt(i) + 3));
-	        
-	        System.out.print (codigo.toUpperCase ());
-	        
-	        //if (frase.charAt(i) >= 'a' && frase.charAt(i) <=  )
-	    }
-	    
-	  
-	    
-	    
-	}
+public class Ejercicio8_3 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner (System.in);
+        long factorial = 1; //long (entero)= 64 bites --> double (real)= 64 bites
+        int num, contador;
+
+        System.out.print ("Introduce número para calcular su factorial: ");
+        num = teclado.nextInt();
+
+        for (contador = num; contador >= 1; contador --) {
+            factorial = factorial * contador;
+        }
+
+        System.out.println ("El factorial de" + num + "es: " +factorial);
+    }
 }

@@ -1,27 +1,32 @@
-//Leer una frase, calcular cuántas letras tiene. 
-//Para homogeneizar, se convertira la frase a mayúsculas.
-
-//Autor: Inés Cristóbal Ascaso
-//Fecha: 12/11/2021
+//Leer un número por teclado, y sacar por pantalla la lista de todos los números primos hasta dicho número.
 
 
+//Autor: Inés Cristóbal
+//Fecha: 08/11/21
 
 import java.util.Scanner;
-public class Ejercicio11_4 {
-    public static void main (String[] args) {
+public class Ejercicio11_3 {
+    public static void main(String[] args) {
         Scanner teclado = new Scanner (System.in);
-        int num_letras = 0, i;
+        int i, num, divisor;
 
-        System.out.print ("Introduce una frase: ");
-        String frase = teclado.nextList();
-        System.out.println (frase.toUpperCase());
+        System.out.print ("Introduce un número: ");
+        num = teclado.nextInt();
 
-        for (i = 0;  i < frase.length(); i++) {
-            if (Character.isLetter(frase.charAt(i))) {
-                num_letras ++;
+        for (i = 1; i <= num; i ++) {
+           int contador = 0;
+           for (divisor = 1; divisor <= i; divisor ++) {
+               int resto = i % divisor;
+               if (resto == 0) {
+                   contador ++;
+               }
             }
-        }
 
-        System.out.println ("El número de letras que tiene la frase es: " +num_letras);
+            if (contador == 2) {
+                System.out.println (i);
+            }
+
+        }
+        
     }
 }

@@ -1,34 +1,32 @@
-//Leer una frase y elegir entre la opción de convertir la frase a mayúsculas 
-//o la opción de convertir la frase a minúsculas.
+// Leer por teclado un número N y escribir por pantalla mediante un mensaje
+//si el número N es primo o no es primo (sin incluirlo)
 
-//Autor: Inés Cristóbal Ascaso
-//Fecha: 15/11/2021
-
+//Autor: Inés Cristóbal
+//Fecha: 04/11/21
 
 import java.util.Scanner;
-public class Ejercicio4_4 {
-    public static void main (String[] args) {
+public class Ejercicio4_3{
+    public static void main(String[] args) {
         Scanner teclado = new Scanner (System.in);
-        int opcion;
-        
-        System.out.print ("Introduce una frase: ");
-        String frase = teclado.nextLine();
-        
-        System.out.print ("Elige entre la opción 1 y la opción 2: ");
-        opcion = teclado.nextInt();
-            
-            switch (opcion) {
-                case 1:
-                   //Conversión frase a mayúsculas
-                   System.out.println (frase.toUpperCase() );
-                   break;
-                    
-                case 2:
-                    //Conversión frase a minúsculas
-                    System.out.println (frase.toLowerCase() );
-                    break;
+        int contador = 0;
+	    int divisor, num;
 
-                default:
-                    System.out.print ("Error");
-    }       }
+	System.out.print ("Ingresar un número: ");
+	num = teclado.nextInt();
+
+	for (divisor = 1; divisor < num; divisor ++) { 
+		 int resto = num % divisor; 
+		 if (resto == 0)
+			contador ++; //guarda el número de diviones exactas
+			
+	}
+	   if (contador < 2){  
+	        System.out.print ("El número es primo");
+	   } else {
+	        System.out.print ("El número NO es primo");
+	   }
+    }
+    
 }
+
+

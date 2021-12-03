@@ -1,44 +1,32 @@
-//Leer una frase, y a continuación, escribir cuantas vocales, consonantes y caracteres númericos tiene.
+//Leer números por teclado hasta que se lea el 0 (fin del programa). 
+//Calcular y escribir la suma de los números introducidos en lugar par e impar.
 
-//Autor: Inés Cristóbal Ascaso
-//Fecha: 15/11/2021
-
-
+//Autor: Inés Cristóbal
+//Fecha: 04/11/21
 
 import java.util.Scanner;
-public class Ejercicio6_4{
-        public static void main (String[] args) {
-                Scanner teclado = new Scanner (System.in);
-                int contador = 0, i, vocales = 0, consonantes = 0, digitos = 0;
+public class Ejercicio6_3 { 
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner (System.in);
+        int numero = 0, sumapar = 0, sumaimpar = 0, contador = 0;
+
+        do {
+            System.out.print ("Introduce un número: ");
+            numero = teclado.nextInt();
+
+            if (contador % 2 == 0) { //verificar si la posición es par.
+                sumapar = sumapar + numero;
+                contador ++;
+            } else {
+                sumaimpar = sumaimpar + numero;
+                contador ++;
+            }
+
+        } while (numero != 0); //Condición se ejecutará al final
+                               //Si se introduce un número diferente a 0, se ejecutará el bucle do.
         
-                System.out.print ("Introduce una frase: ");
-                String frase = teclado.nextLine();
+        System.out.println ("La suma de los números en posición par: " +sumapar);
+        System.out.println ("La suma de los números en posición impar: " +sumaimpar);
 
-                for ( i = 0; i < frase.length(); i++) {
-            
-                        if ((frase.charAt(i) == 'a') || (frase.charAt(i) == 'e') ||
-                            (frase.charAt(i) == 'i') || (frase.charAt(i) == 'o') ||
-                            (frase.charAt(i) == 'u')) {
-                                vocales ++;
-                        } else if ((frase.charAt(i) >= 'a' && frase.charAt(i) <= 'z' ) || 
-                                   (frase.charAt(i) >= 'A' && frase.charAt(i) <= 'Z' )) {
-                                consonantes++;
-                        }
-                        
-                        else  if ((frase.charAt(i) >= '0' && frase.charAt(i) <= '9')) {
-                                digitos++;
-                }       }
-
-        }
-    
+    }
 }
-
-
-
-        
-        
-        
-            
-            
-        
-        
